@@ -403,15 +403,14 @@ main {
   padding: 0.45rem 0.65rem;
 }
 
-.short-built-answer {
-  margin-top: 0.7rem;
-  color: rgb(15 118 110);
-  font-weight: 900;
-}
-
 .short-model-box {
   background: rgb(236 253 245);
   border-color: rgb(167 243 208);
+}
+
+.short-frame-card.completed {
+  border-color: rgb(45 212 191);
+  background: rgb(240 253 250);
 }
 
 .short-model-box p,

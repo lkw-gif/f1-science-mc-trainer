@@ -1239,10 +1239,6 @@ function renderMarksStep(q) {
   `;
 }
 
-function frameToText(frame) {
-  return frame.parts.map((part) => (typeof part === "string" ? part : part.answer)).join("");
-}
-
 function renderFrameBuilder(q, context) {
   const bank = q.wordBank.map((word) => `<button type="button" class="short-bank-word" data-word="${escapeHtml(word)}">${escapeHtml(word)}</button>`).join("");
   const frames = q.frames.map((frame, frameIndex) => {
@@ -1259,7 +1255,6 @@ function renderFrameBuilder(q, context) {
       <div class="short-frame-card">
         <h4>${escapeHtml(frame.label)}</h4>
         <div class="short-frame-line">${parts}</div>
-        <p class="short-built-answer" data-frame-answer="${escapeHtml(frameToText(frame))}"></p>
       </div>
     `;
   }).join("");
@@ -1341,13 +1336,7 @@ function attachShortBuilderHandlers(root) {
   root.querySelectorAll(".short-blank").forEach((select) => {
     select.addEventListener("change", () => {
       const frameCard = select.closest(".short-frame-card");
-      const answerLine = frameCard.querySelector(".short-built-answer");
-      const values = [...frameCard.querySelectorAll(".short-blank")].map((item) => item.value || "______");
-      let cursor = 0;
-      const frameText = [...frameCard.querySelectorAll(".short-frame-line > span, .short-frame-line > select")]
-        .map((node) => node.tagName === "SELECT" ? values[cursor++] : node.innerText)
-        .join("");
-      answerLine.innerText = frameText.includes("______") ? "" : frameText;
+      frameCard.classList.toggle("completed", [...frameCard.querySelectorAll(".short-blank")].every((item) => item.value));
     });
   });
   root.querySelectorAll(".short-bank-word").forEach((button) => {
@@ -1369,7 +1358,7 @@ function attachShortBuilderHandlers(root) {
     button.addEventListener("click", () => {
       const builder = button.closest(".short-builder");
       builder.querySelectorAll(".short-blank").forEach((select) => { select.value = ""; });
-      builder.querySelectorAll(".short-built-answer").forEach((line) => { line.innerText = ""; });
+      builder.querySelectorAll(".short-frame-card").forEach((card) => { card.classList.remove("completed"); });
       builder.querySelector(".short-model-box").classList.add("hidden");
     });
   });
