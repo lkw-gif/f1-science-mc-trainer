@@ -255,7 +255,8 @@ main {
 .short-model-box,
 .short-bank-frame,
 .short-mini-word,
-.short-model-answer {
+.short-model-answer,
+.short-sub-question-card {
   border-radius: 1rem;
   border: 1px solid rgb(226 232 240);
   background: rgb(248 250 252);
@@ -269,6 +270,88 @@ main {
 .short-bank-frame,
 .short-model-answer {
   padding: 1rem;
+}
+
+.short-sub-question-card {
+  padding: 1rem;
+}
+
+.short-sub-id,
+.short-sub-mark {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  font-weight: 900;
+}
+
+.short-sub-id {
+  background: rgb(224 231 255);
+  color: rgb(67 56 202);
+  padding: 0.25rem 0.75rem;
+}
+
+.short-sub-mark {
+  background: rgb(240 253 250);
+  color: rgb(15 118 110);
+  padding: 0.25rem 0.65rem;
+  font-size: 0.9rem;
+}
+
+.short-sub-question {
+  margin-top: 0.8rem;
+  color: rgb(15 23 42);
+  font-size: 1.12rem;
+  line-height: 1.65;
+  font-weight: 850;
+}
+
+.short-sub-help {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.75rem;
+}
+
+.short-sub-help span {
+  border-radius: 999px;
+  background: white;
+  border: 1px solid rgb(186 230 253);
+  color: rgb(3 105 161);
+  padding: 0.25rem 0.6rem;
+  font-weight: 850;
+  font-size: 0.9rem;
+}
+
+.short-answer-label {
+  display: block;
+  margin-top: 0.9rem;
+  color: rgb(71 85 105);
+  font-weight: 900;
+}
+
+.short-read-answer {
+  width: 100%;
+  min-height: 4.8rem;
+  margin-top: 0.4rem;
+  border: 2px solid rgb(199 210 254);
+  border-radius: 0.9rem;
+  background: white;
+  padding: 0.75rem 0.9rem;
+  color: rgb(15 23 42);
+  font-weight: 750;
+  line-height: 1.55;
+  resize: vertical;
+}
+
+.short-read-answer:focus {
+  outline: none;
+  border-color: rgb(79 70 229);
+  box-shadow: 0 0 0 4px rgb(199 210 254 / 0.55);
+}
+
+.short-read-answer.has-answer {
+  border-color: rgb(45 212 191);
+  background: rgb(240 253 250);
 }
 
 .short-word-card p,

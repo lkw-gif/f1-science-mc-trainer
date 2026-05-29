@@ -764,6 +764,13 @@ const shortQuestionDatabase = [
     type: "Biology short answer",
     keySkill: "Use correct biology terms and DNA base pairs.",
     originalQuestion: "How many pairs of chromosomes are present in a typical human cell? In which part of a cell are chromosomes found? What are the sex chromosomes in a female? Explain the importance of sex chromosomes in reproduction. Complete the DNA complementary base pairing.",
+    subQuestions: [
+      { id: "D1(a)", marks: 1, question: "How many pairs of chromosomes are present in a typical human cell?", helpfulWords: ["23 pairs", "chromosomes"] },
+      { id: "D1(b)", marks: 1, question: "In which part of a cell are chromosomes found?", helpfulWords: ["nucleus"] },
+      { id: "D1(c)(i)", marks: 1, question: "What are the sex chromosomes in a female?", helpfulWords: ["XX"] },
+      { id: "D1(c)(ii)", marks: 1, question: "Why are sex chromosomes important in reproduction?", helpfulWords: ["determine", "sex", "offspring"] },
+      { id: "D1(d)", marks: 2, question: "Complete the DNA complementary base pairing.", helpfulWords: ["A pairs with T", "C pairs with G"] }
+    ],
     difficultWords: [
       { term: "chromosomes", zh: "染色體", note: "在細胞核內，帶有遺傳資料。" },
       { term: "typical human cell", zh: "一般人類細胞", note: "普通體細胞，不是精子或卵子。" },
@@ -806,6 +813,12 @@ const shortQuestionDatabase = [
     type: "Cause and effect explanation",
     keySkill: "Explain using feed on and not enough food.",
     originalQuestion: "The feeding relationship is Lobster → Octopus → Shark. State the habitat. Classify lobster and octopus as invertebrates. If the number of lobsters decreases sharply, how does it affect the number of octopuses? Explain your answer.",
+    subQuestions: [
+      { id: "D2(a)", marks: 1, question: "What is the habitat of lobster, octopus and shark?", helpfulWords: ["sea", "ocean", "marine habitat"] },
+      { id: "D2(b)", marks: 1, question: "Lobster and octopus do not have backbones. Which group do they belong to?", helpfulWords: ["invertebrates"] },
+      { id: "D2(c)(i)", marks: 1, question: "If the number of lobsters decreases sharply, how does it affect the number of octopuses?", helpfulWords: ["decreases"] },
+      { id: "D2(c)(ii)", marks: 1, question: "Explain your answer using the feeding relationship.", helpfulWords: ["octopuses feed on lobsters", "not enough food"] }
+    ],
     difficultWords: [
       { term: "feeding relationship", zh: "攝食關係", note: "誰吃誰的關係。" },
       { term: "habitat", zh: "棲息地", note: "生物生活的地方。" },
@@ -845,6 +858,10 @@ const shortQuestionDatabase = [
     type: "Heat transfer explanation",
     keySkill: "Link flask structures with conduction and convection.",
     originalQuestion: "The diagram shows the structure of a vacuum flask. Write down how the stopper and vacuum prevent heat transfer by conduction or convection.",
+    subQuestions: [
+      { id: "D3(a)", marks: 1, question: "How does the stopper reduce heat transfer?", helpfulWords: ["prevents air movement", "convection"] },
+      { id: "D3(b)", marks: 1, question: "How does the vacuum reduce heat transfer?", helpfulWords: ["no particles", "conduction", "convection"] }
+    ],
     difficultWords: [
       { term: "vacuum flask", zh: "真空瓶 / 保溫瓶", note: "用來減慢熱傳遞。" },
       { term: "stopper", zh: "瓶塞", note: "塞住瓶口，減少空氣流動。" },
@@ -880,6 +897,11 @@ const shortQuestionDatabase = [
     type: "Energy change and comparison",
     keySkill: "Use converted into and compare kinetic energy.",
     originalQuestion: "Peter jumps into a pool from a 10-meter diving board. State the energy conversion. Compare jumping from a 3 m board and a 10 m board. Explain using kinetic energy, mass and speed.",
+    subQuestions: [
+      { id: "D4(a)", marks: 1, question: "What energy conversion occurs when Peter jumps down from the diving board?", helpfulWords: ["potential energy", "kinetic energy", "converted into"] },
+      { id: "D4(b)(i)", marks: 1, question: "Which jump gives Peter greater kinetic energy, from 3 m or from 10 m?", helpfulWords: ["10 m", "greater kinetic energy"] },
+      { id: "D4(b)(ii)", marks: 1, question: "Explain your answer using mass and speed.", helpfulWords: ["same mass", "higher speed"] }
+    ],
     difficultWords: [
       { term: "diving board", zh: "跳水板", note: "跳入泳池前站立的平台。" },
       { term: "potential energy", zh: "位能", note: "因高度而有的能量。" },
@@ -917,6 +939,13 @@ const shortQuestionDatabase = [
     type: "Fair test variables",
     keySkill: "Separate independent, controlled and dependent variables.",
     originalQuestion: "To investigate how humidity affects the rate of evaporation, Olivia does a fair test. Identify the independent variable, controlled variables and dependent variable. Which filter paper dries more quickly? Explain using humidity and rate of evaporation.",
+    subQuestions: [
+      { id: "D5(a)", marks: 1, question: "What is the independent variable in this investigation?", helpfulWords: ["humidity"] },
+      { id: "D5(b)", marks: 2, question: "Name two controlled variables in this fair test.", helpfulWords: ["size of filter paper", "amount of water", "temperature"] },
+      { id: "D5(c)", marks: 1, question: "What is the dependent variable?", helpfulWords: ["rate of evaporation", "drying time"] },
+      { id: "D5(d)(i)", marks: 1, question: "Which filter paper dries more quickly?", helpfulWords: ["lower humidity", "dries more quickly"] },
+      { id: "D5(d)(ii)", marks: 2, question: "Explain your answer using humidity and rate of evaporation.", helpfulWords: ["lower humidity", "higher rate of evaporation"] }
+    ],
     difficultWords: [
       { term: "humidity", zh: "濕度", note: "空氣中水蒸氣多少。" },
       { term: "rate of evaporation", zh: "蒸發速率", note: "水蒸發得快或慢。" },
@@ -956,6 +985,12 @@ const shortQuestionDatabase = [
     type: "Diagram labels and functions",
     keySkill: "Distinguish fertilization and implantation.",
     originalQuestion: "Use letters from the male and female reproductive system diagrams to identify the structures for producing sperms, producing fluid that contains nutrients for sperms, fertilization, and implantation of an embryo.",
+    subQuestions: [
+      { id: "D6(a)(i)", marks: 1, question: "Which structure produces sperms?", helpfulWords: ["testis"] },
+      { id: "D6(a)(ii)", marks: 1, question: "Which structure produces fluid that contains nutrients for sperms?", helpfulWords: ["seminal vesicle", "prostate gland"] },
+      { id: "D6(b)(i)", marks: 1, question: "Where does fertilization occur?", helpfulWords: ["oviduct"] },
+      { id: "D6(b)(ii)", marks: 1, question: "Where does implantation of an embryo occur?", helpfulWords: ["uterus"] }
+    ],
     difficultWords: [
       { term: "sperms", zh: "精子", note: "男性配子。" },
       { term: "nutrients", zh: "營養物質", note: "提供能量和養分。" },
@@ -1002,6 +1037,7 @@ let inWrongOnlyMode = false;
 let wrongModeIndex = 0;
 let currentShortIndex = 0;
 let currentShortStep = 0;
+const shortStudentAnswers = {};
 
 const screens = {
   home: document.getElementById("home-screen"),
@@ -1089,28 +1125,36 @@ function escapeHtml(value) {
 }
 
 function setShortMode(mode) {
-  const isHome = mode === "home";
-  const isBank = mode === "bank";
-  const isPractice = mode === "practice";
-  shortHomeView.classList.toggle("hidden", !isHome);
-  shortGuidedView.classList.add("hidden");
-  shortFrameBankView.classList.toggle("hidden", !isBank);
-  shortPracticeView.classList.toggle("hidden", !isPractice);
-  [[shortModeHomeBtn, isHome], [shortModeBankBtn, isBank], [shortModePracticeBtn, isPractice]].forEach(([button, active]) => {
+  shortHomeView.classList.remove("hidden");
+  shortGuidedView.classList.remove("hidden");
+  shortFrameBankView.classList.remove("hidden");
+  shortPracticeView.classList.remove("hidden");
+
+  [[shortModeHomeBtn, mode === "home"], [shortModeBankBtn, mode === "bank"], [shortModePracticeBtn, mode === "practice"]].forEach(([button, active]) => {
     button.classList.toggle("active", active);
   });
-  if (isHome) renderShortCards();
-  if (isBank) renderFrameBank();
-  if (isPractice) renderPracticeMode();
+
+  renderShortCards();
+  renderShortGuidedQuestion();
+  renderFrameBank();
+  renderPracticeMode();
   refreshIcons();
+
+  const target = {
+    home: shortHomeView,
+    guided: shortGuidedView,
+    bank: shortFrameBankView,
+    practice: shortPracticeView
+  }[mode] || shortHomeView;
+  target.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 function openShortQuestion(index, step = 0) {
   currentShortIndex = Math.max(0, Math.min(index, shortQuestionDatabase.length - 1));
   currentShortStep = Math.max(0, Math.min(step, shortSteps.length - 1));
-  shortHomeView.classList.add("hidden");
-  shortFrameBankView.classList.add("hidden");
-  shortPracticeView.classList.add("hidden");
+  shortHomeView.classList.remove("hidden");
+  shortFrameBankView.classList.remove("hidden");
+  shortPracticeView.classList.remove("hidden");
   shortGuidedView.classList.remove("hidden");
   [shortModeHomeBtn, shortModeBankBtn, shortModePracticeBtn].forEach((button) => button.classList.remove("active"));
   renderShortGuidedQuestion();
@@ -1163,6 +1207,7 @@ function renderShortGuidedQuestion() {
   });
   const renderers = [renderReadStep, renderUnderstandStep, renderMarksStep, renderBuildStep, renderMistakesStep, renderModelStep];
   shortStepContent.innerHTML = renderers[currentShortStep](q, "guided");
+  attachShortReadAnswerHandlers(shortStepContent);
   attachShortBuilderHandlers(shortStepContent);
   refreshIcons();
 }
@@ -1172,13 +1217,35 @@ function renderReadStep(q) {
     <div class="grid grid-cols-1 xl:grid-cols-5 gap-5">
       <section class="short-panel xl:col-span-3">
         <div class="short-section-title"><i data-lucide="book-open" class="w-5 h-5"></i> Step 1: Read the Question</div>
-        <p class="short-original">${escapeHtml(q.originalQuestion)}</p>
-        <div class="mt-4 p-4 bg-amber-50 border border-amber-100 rounded-2xl text-amber-900 font-semibold">
-          先不要急住睇完整中文翻譯。先圈出生字，再逐段拆句。
+        <p class="text-slate-500 font-semibold mb-4">
+          將原卷大題拆成小題。每讀完一小題，就先在下面試答；不用等到最後先寫。
+        </p>
+        <div class="space-y-4">
+          ${q.subQuestions.map((subQuestion) => {
+            const key = `${q.id}-${subQuestion.id}`;
+            const savedAnswer = shortStudentAnswers[key] || "";
+            return `
+              <article class="short-sub-question-card">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <span class="short-sub-id">${escapeHtml(subQuestion.id)}</span>
+                  <span class="short-sub-mark">${subQuestion.marks} mark${subQuestion.marks > 1 ? "s" : ""}</span>
+                </div>
+                <p class="short-sub-question">${escapeHtml(subQuestion.question)}</p>
+                <div class="short-sub-help">
+                  ${subQuestion.helpfulWords.map((word) => `<span>${escapeHtml(word)}</span>`).join("")}
+                </div>
+                <label class="short-answer-label" for="answer-${escapeHtml(key)}">Your answer 試寫答案</label>
+                <textarea id="answer-${escapeHtml(key)}" class="short-read-answer" data-answer-key="${escapeHtml(key)}" rows="2" placeholder="Try your answer in English...">${escapeHtml(savedAnswer)}</textarea>
+              </article>
+            `;
+          }).join("")}
         </div>
       </section>
       <section class="short-panel xl:col-span-2">
         <div class="short-section-title"><i data-lucide="sparkles" class="w-5 h-5"></i> Difficult Words</div>
+        <div class="mb-4 p-4 bg-amber-50 border border-amber-100 rounded-2xl text-amber-900 font-semibold">
+          先看詞語，不要即刻看完整中文答案。目標是一步一步讀英文。
+        </div>
         <div class="space-y-3">
           ${q.difficultWords.map((word) => `
             <div class="short-word-card">
@@ -1330,6 +1397,16 @@ function renderModelStep(q) {
       </div>
     </section>
   `;
+}
+
+function attachShortReadAnswerHandlers(root) {
+  root.querySelectorAll(".short-read-answer").forEach((textarea) => {
+    textarea.addEventListener("input", () => {
+      shortStudentAnswers[textarea.dataset.answerKey] = textarea.value;
+      textarea.classList.toggle("has-answer", textarea.value.trim().length > 0);
+    });
+    textarea.classList.toggle("has-answer", textarea.value.trim().length > 0);
+  });
 }
 
 function attachShortBuilderHandlers(root) {
