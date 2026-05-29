@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>F.1 Science Final Exam MC Trainer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+  <header class="bg-gradient-to-r from-teal-500 to-cyan-600 text-white shadow-md py-4 px-6 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center gap-4">
+      <div class="flex items-center gap-3 min-w-0">
+        <div class="p-2 bg-white/20 rounded-lg flex-shrink-0">
+          <i data-lucide="flask-conical" class="w-6 h-6"></i>
+        </div>
+        <div class="min-w-0">
+          <h1 class="font-header text-xl md:text-2xl font-bold tracking-wide truncate">F.1 Science Final Exam MC Trainer</h1>
+          <p class="text-xs text-teal-100 hidden sm:block">專為初中英文弱學生設計的科學題思維訓練器</p>
+        </div>
+      </div>
+      <span class="text-xs bg-white/20 px-3 py-1.5 rounded-full font-medium hidden sm:flex items-center gap-1 flex-shrink-0">
+        <i data-lucide="languages" class="w-4 h-4"></i> 雙語學習支援
+      </span>
+    </div>
+  </header>
+
+  <main class="flex-grow max-w-7xl w-full mx-auto p-4 md:p-6 flex flex-col justify-start">
+    <section id="home-screen" class="space-y-6 md:space-y-8 my-auto py-8">
+      <div class="text-center space-y-4">
+        <span class="inline-block bg-teal-100 text-teal-800 font-bold px-4 py-1.5 rounded-full text-sm font-header uppercase tracking-wider">
+          Section A: 17 Multiple Choice Questions
+        </span>
+        <h2 class="font-header text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-700">
+          唔怕英文卷！學識拆解科學題
+        </h2>
+        <p class="text-slate-600 text-base md:text-lg max-w-xl mx-auto">
+          每題都有貼題圖片、中文題意、句子拆解、核心生字同廣東話思考提示，幫英文弱底學生逐步適應完整英文科學題。
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow flex flex-col items-center text-center">
+          <div class="w-12 h-12 rounded-full bg-cyan-100 text-cyan-600 flex items-center justify-center mb-3">
+            <i data-lucide="image" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-bold text-slate-800 mb-1">逐題貼題圖片</h3>
+          <p class="text-xs text-slate-500">每條 MC 都配上清楚科學情境圖，先理解場景，再拆英文。</p>
+        </div>
+        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow flex flex-col items-center text-center">
+          <div class="w-12 h-12 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center mb-3">
+            <i data-lucide="align-left" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-bold text-slate-800 mb-1">句子結構分拆</h3>
+          <p class="text-xs text-slate-500">把長英文題目拆成短句，配對中文意思，練習完整讀題。</p>
+        </div>
+        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow flex flex-col items-center text-center">
+          <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mb-3">
+            <i data-lucide="book-open-check" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-bold text-slate-800 mb-1">選項難字即時譯</h3>
+          <p class="text-xs text-slate-500">選項旁邊直接顯示常見難字中文，減低查字典負擔。</p>
+        </div>
+      </div>
+
+      <div class="text-center pt-4">
+        <button id="start-btn" class="font-header bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white font-bold text-lg md:text-xl px-10 py-4 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 inline-flex items-center gap-3">
+          開始挑戰 MC 練習 <i data-lucide="arrow-right" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </section>
+
+    <section id="practice-screen" class="hidden space-y-6">
+      <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div class="flex items-center justify-between md:justify-start gap-4 flex-grow">
+          <span class="text-slate-500 text-sm font-semibold">
+            第 <span id="current-q-num" class="text-teal-600 font-bold text-lg">1</span> 題，共 <span id="total-q-num" class="font-bold">17</span> 題
+          </span>
+          <div class="w-full max-w-xs bg-slate-100 rounded-full h-3 overflow-hidden">
+            <div id="progress-bar" class="bg-gradient-to-r from-teal-400 to-cyan-500 h-full rounded-full transition-all duration-300" style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between sm:justify-end gap-6 border-t pt-3 md:pt-0 md:border-t-0 border-slate-100 text-xs">
+          <div class="flex items-center gap-1.5" title="First-attempt correct answers">
+            <div class="p-1 bg-emerald-50 text-emerald-600 rounded"><i data-lucide="award" class="w-4 h-4"></i></div>
+            <div>
+              <p class="text-slate-400 font-medium">一次即對分數</p>
+              <p class="font-bold text-slate-700 text-sm"><span id="live-score">0</span> / <span id="total-points">17</span></p>
+            </div>
+          </div>
+          <div class="flex items-center gap-1.5" title="Total correct answers">
+            <div class="p-1 bg-indigo-50 text-indigo-600 rounded"><i data-lucide="check-circle" class="w-4 h-4"></i></div>
+            <div>
+              <p class="text-slate-400 font-medium">累計答對題數</p>
+              <p id="live-correct" class="font-bold text-slate-700 text-sm">0</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <div class="p-1 bg-sky-50 text-sky-600 rounded"><i data-lucide="rotate-ccw" class="w-4 h-4"></i></div>
+            <div>
+              <p class="text-slate-400 font-medium">嘗試次數</p>
+              <p id="live-attempts" class="font-bold text-slate-700 text-sm">0</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 xl:grid-cols-12 gap-6 items-start">
+        <aside id="question-navigator" class="xl:col-span-3 bg-white p-5 rounded-3xl shadow-sm border border-slate-100 space-y-4 xl:sticky xl:top-28">
+          <div class="flex items-center justify-between gap-3">
+            <h4 class="font-header font-bold text-slate-800 flex items-center gap-2 text-sm">
+              <span class="p-1.5 bg-cyan-50 text-cyan-600 rounded-lg"><i data-lucide="list-checks" class="w-4 h-4"></i></span>
+              全卷題目導航
+            </h4>
+            <span id="question-nav-count" class="bg-slate-100 text-slate-600 font-bold px-2.5 py-1 rounded-full text-[11px]">17 Qs</span>
+          </div>
+          <p class="text-xs text-slate-500 leading-relaxed">點擊任何題目即時跳去該題；答題後會自動標示已答對或待重做。</p>
+          <div id="question-jump-list" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 gap-2 max-h-[540px] overflow-y-auto pr-1"></div>
+        </aside>
+
+        <div class="xl:col-span-9 grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div class="lg:col-span-7 space-y-4">
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 space-y-6">
+              <div class="flex justify-between items-center gap-3">
+                <span id="question-topic" class="bg-indigo-50 text-indigo-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Laboratory Safety</span>
+                <span class="text-xs text-slate-400 font-semibold" id="question-attempts-badge">First Attempt</span>
+              </div>
+
+              <div class="space-y-3">
+                <div class="text-xs uppercase tracking-wider text-slate-400 font-bold">The Question 英文題目</div>
+                <h3 id="question-text" class="text-slate-800 text-lg md:text-xl font-bold leading-relaxed">If a chemical spills into our eye, what should we do?</h3>
+              </div>
+
+              <div id="diagram-container" class="bg-slate-50 rounded-2xl p-3 flex items-center justify-center border border-dashed border-slate-200"></div>
+
+              <div class="space-y-3">
+                <div class="text-xs uppercase tracking-wider text-slate-400 font-bold mb-1">請選擇最佳選項（注意底下的中文難字解釋）：</div>
+                <div id="options-container" class="grid grid-cols-1 gap-3"></div>
+              </div>
+
+              <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-3 items-center justify-between">
+                <button id="hint-btn" class="bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200 font-bold text-sm px-4 py-3 rounded-xl flex items-center gap-2 transition-all">
+                  <i data-lucide="lightbulb" class="w-4 h-4"></i> 中文思考提示 (Hint)
+                </button>
+                <div class="flex gap-2">
+                  <button id="check-btn" disabled class="bg-teal-500 hover:bg-teal-600 disabled:bg-slate-200 disabled:text-slate-400 disabled:cursor-not-allowed text-white font-bold text-sm px-6 py-3 rounded-xl flex items-center gap-2 shadow-md hover:shadow-lg disabled:shadow-none transition-all">
+                    Check Answer 檢查答案 <i data-lucide="shield-check" class="w-4 h-4"></i>
+                  </button>
+                  <button id="next-btn" class="hidden bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm px-6 py-3 rounded-xl flex items-center gap-2 shadow-md hover:shadow-lg transition-all">
+                    下一題 <i data-lucide="arrow-right-circle" class="w-4 h-4"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div id="feedback-box" class="hidden p-5 rounded-3xl border transition-all duration-300"></div>
+          </div>
+
+          <div class="lg:col-span-5 space-y-4">
+            <div class="bg-white p-5 rounded-3xl shadow-sm border border-slate-100 space-y-3">
+              <h4 class="font-header font-bold text-slate-700 flex items-center gap-2 text-sm">
+                <span class="p-1.5 bg-indigo-50 text-indigo-600 rounded-lg"><i data-lucide="align-left" class="w-4 h-4"></i></span>
+                Sentence Decoder (題目完整句子拆解)
+              </h4>
+              <p class="text-xs text-slate-400">把句子拆開來看，先明白結構，再找答案。</p>
+              <div id="decoder-container" class="space-y-3"></div>
+            </div>
+
+            <div class="bg-white p-5 rounded-3xl shadow-sm border border-slate-100 space-y-3">
+              <h4 class="font-header font-bold text-slate-700 flex items-center gap-2 text-sm">
+                <span class="p-1.5 bg-sky-50 text-sky-600 rounded-lg"><i data-lucide="languages" class="w-4 h-4"></i></span>
+                Question Meaning (題目意思)
+              </h4>
+              <div class="bg-sky-50/50 p-4 rounded-2xl border border-sky-100">
+                <p id="meaning-zh" class="text-slate-700 text-sm leading-relaxed font-medium"></p>
+              </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-3xl shadow-sm border border-slate-100 space-y-3">
+              <h4 class="font-header font-bold text-slate-700 flex items-center gap-2 text-sm">
+                <span class="p-1.5 bg-emerald-50 text-emerald-600 rounded-lg"><i data-lucide="book-open" class="w-4 h-4"></i></span>
+                Keyword Helper (核心關鍵字字典)
+              </h4>
+              <p class="text-xs text-slate-400">點擊關鍵字卡片，可在左邊英文題目中高亮該單字。</p>
+              <div id="keywords-container" class="space-y-3 max-h-[250px] overflow-y-auto pr-1"></div>
+            </div>
+
+            <div id="hint-box" class="hidden bg-amber-50/80 border border-amber-100 p-5 rounded-3xl space-y-3">
+              <h4 class="font-header font-bold text-amber-800 flex items-center gap-2 text-sm">
+                <span class="p-1.5 bg-amber-100 text-amber-700 rounded-lg"><i data-lucide="sparkles" class="w-4 h-4"></i></span>
+                中文引導思考提示 (Hint)
+              </h4>
+              <p id="hint-text" class="text-slate-700 text-sm leading-relaxed font-medium"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="review-screen" class="hidden space-y-6 py-4">
+      <div class="bg-gradient-to-r from-teal-500 to-cyan-600 rounded-3xl p-6 md:p-8 text-white text-center space-y-4 shadow-md relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 opacity-10 text-white">
+          <i data-lucide="award" class="w-60 h-60"></i>
+        </div>
+        <span class="bg-white/20 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest inline-block">Practice Completed! 恭喜完成！</span>
+        <h2 class="font-header text-3xl md:text-5xl font-black">你的首推得分: <span id="final-score">0</span>/<span id="final-total">17</span></h2>
+        <p class="text-teal-100 text-sm md:text-base max-w-lg mx-auto">
+          你在完全不看答案的「第一次嘗試」中答對了 <span id="first-try-count">0</span> 題。你總共嘗試了 <span id="total-attempts-count">0</span> 次來完成整套練習。
+        </p>
+        <div class="pt-2 flex flex-wrap justify-center gap-4">
+          <button id="retry-all-btn" class="bg-white text-teal-700 hover:bg-slate-100 font-bold px-6 py-3 rounded-xl text-sm transition-all shadow flex items-center gap-2">
+            <i data-lucide="rotate-ccw" class="w-4 h-4"></i> 重新挑戰 (Restart)
+          </button>
+          <button id="retry-wrong-btn" class="hidden bg-amber-500 text-white hover:bg-amber-600 font-bold px-6 py-3 rounded-xl text-sm transition-all shadow flex items-center gap-2">
+            <i data-lucide="alert-circle" class="w-4 h-4"></i> 專注重做答錯題目
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 space-y-4">
+          <h3 class="font-header font-bold text-slate-800 flex items-center gap-2 text-base">
+            <span class="p-1.5 bg-indigo-50 text-indigo-600 rounded-lg"><i data-lucide="bar-chart-2" class="w-4 h-4"></i></span>
+            主題掌握度分析 (Topic Analysis)
+          </h3>
+          <div id="topics-analysis-container" class="space-y-4"></div>
+        </div>
+
+        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 space-y-4 flex flex-col justify-between">
+          <div>
+            <h3 class="font-header font-bold text-slate-800 flex items-center gap-2 text-base mb-3">
+              <span class="p-1.5 bg-rose-50 text-rose-600 rounded-lg"><i data-lucide="heart-pulse" class="w-4 h-4"></i></span>
+              科學英語學習建議 (Study Advice)
+            </h3>
+            <div id="diagnostic-recommendation" class="text-sm text-slate-600 leading-relaxed space-y-3"></div>
+          </div>
+          <div class="bg-teal-50/50 p-4 rounded-2xl border border-teal-100 mt-4 flex items-center justify-between gap-2">
+            <div class="space-y-1">
+              <h4 class="font-bold text-slate-800 text-xs">專屬生字庫已經備好！</h4>
+              <p class="text-slate-500 text-[11px]">你可以列印出來隨時溫習</p>
+            </div>
+            <button onclick="window.print()" class="bg-teal-600 hover:bg-teal-700 text-white px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1">
+              <i data-lucide="printer" class="w-3.5 h-3.5"></i> 列印單字表
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 space-y-4">
+        <div class="flex justify-between items-center flex-wrap gap-2">
+          <h3 class="font-header font-bold text-slate-800 flex items-center gap-2 text-base">
+            <span class="p-1.5 bg-emerald-50 text-emerald-600 rounded-lg"><i data-lucide="bookmark" class="w-4 h-4"></i></span>
+            這次學會的核心詞彙 (Bilingual Science Dictionary)
+          </h3>
+          <span class="bg-slate-100 text-slate-600 font-bold px-3 py-1 rounded-full text-xs" id="vocab-counter">0 Words</span>
+        </div>
+        <p class="text-xs text-slate-500">點擊任何字卡，加深你對該英文字的記憶。</p>
+        <div id="master-vocab-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-slate-800 text-slate-400 py-6 px-4 border-t border-slate-700 text-center text-xs mt-auto">
+    <div class="max-w-4xl mx-auto space-y-2">
+      <p class="font-bold text-slate-300">F.1 Science Final Exam MC Trainer (Bilingual English Scaffolding)</p>
+      <p>專為英文中游或弱底、但熱愛科學的香港中一學生研發。用中文對照打破英文恐懼。</p>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
