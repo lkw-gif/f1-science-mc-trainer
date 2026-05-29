@@ -740,6 +740,257 @@ const questionDatabase = [
   }
 ];
 
+const shortSteps = [
+  { title: "Read", zh: "讀題", icon: "book-open" },
+  { title: "Understand", zh: "明白題意", icon: "languages" },
+  { title: "Marks", zh: "拆分", icon: "table-2" },
+  { title: "Build", zh: "造句", icon: "blocks" },
+  { title: "Mistakes", zh: "常見錯誤", icon: "alert-triangle" },
+  { title: "Model", zh: "參考答案", icon: "badge-check" }
+];
+
+const frameBank = [
+  { type: "Explain", frames: ["It is because ________.", "This is because ________."] },
+  { type: "Compare", frames: ["________ is higher than ________.", "________ is lower than ________.", "________ is greater than ________.", "________ is smaller than ________."] },
+  { type: "Energy conversion", frames: ["________ energy is converted into ________ energy."] },
+  { type: "Fair test", frames: ["The independent variable is ________.", "The controlled variables are ________.", "The dependent variable is ________."] },
+  { type: "Cause and effect", frames: ["When ________ decreases, ________ also decreases.", "There is not enough ________, so ________ decreases."] }
+];
+
+const shortQuestionDatabase = [
+  {
+    id: "D1",
+    topic: "Chromosomes and DNA",
+    type: "Biology short answer",
+    keySkill: "Use correct biology terms and DNA base pairs.",
+    originalQuestion: "How many pairs of chromosomes are present in a typical human cell? In which part of a cell are chromosomes found? What are the sex chromosomes in a female? Explain the importance of sex chromosomes in reproduction. Complete the DNA complementary base pairing.",
+    difficultWords: [
+      { term: "chromosomes", zh: "染色體", note: "在細胞核內，帶有遺傳資料。" },
+      { term: "typical human cell", zh: "一般人類細胞", note: "普通體細胞，不是精子或卵子。" },
+      { term: "sex chromosomes", zh: "性染色體", note: "決定性別的染色體，例如 XX 或 XY。" },
+      { term: "reproduction", zh: "繁殖", note: "產生下一代的過程。" },
+      { term: "complementary base pairing", zh: "互補鹼基配對", note: "DNA 中 A 配 T，C 配 G。" }
+    ],
+    chunks: [
+      { eng: "How many pairs of chromosomes", zh: "有多少對染色體" },
+      { eng: "are present in a typical human cell?", zh: "存在於一般人類細胞？" },
+      { eng: "In which part of a cell", zh: "在細胞的哪一部分" },
+      { eng: "are chromosomes found?", zh: "可以找到染色體？" },
+      { eng: "Complete the DNA complementary base pairing.", zh: "完成 DNA 互補鹼基配對。" }
+    ],
+    meaningZh: "這題問染色體數目、位置、女性性染色體、性染色體在繁殖的重要性，以及 DNA 鹼基點樣配對。",
+    marks: [
+      { mark: "1", write: "寫出一般人類細胞有 23 pairs of chromosomes", words: "23 pairs" },
+      { mark: "1", write: "寫出染色體在 nucleus", words: "nucleus" },
+      { mark: "1", write: "寫出女性性染色體是 XX", words: "XX" },
+      { mark: "1", write: "解釋性染色體決定 offspring 的 sex", words: "determine, sex" },
+      { mark: "2", write: "正確配對 DNA bases", words: "A-T, C-G" }
+    ],
+    wordBank: ["23 pairs", "nucleus", "XX", "sex", "offspring", "A", "T", "C", "G"],
+    frames: [
+      { label: "Chromosome number", parts: ["A typical human cell has ", { answer: "23 pairs", options: ["23 pairs", "23", "46 pairs", "2 pairs"] }, " of chromosomes."] },
+      { label: "Chromosome position", parts: ["Chromosomes are found in the ", { answer: "nucleus", options: ["nucleus", "cytoplasm", "cell membrane", "vacuole"] }, "."] },
+      { label: "Female sex chromosomes", parts: ["The sex chromosomes in a female are ", { answer: "XX", options: ["XX", "XY", "YY", "X"] }, "."] },
+      { label: "Importance", parts: ["Sex chromosomes determine the ", { answer: "sex", options: ["sex", "mass", "habitat", "diet"] }, " of the ", { answer: "offspring", options: ["offspring", "parent", "chromosome", "cell wall"] }, "."] },
+      { label: "Base pairing", parts: ["In DNA, ", { answer: "A", options: ["A", "C", "G", "T"] }, " pairs with ", { answer: "T", options: ["T", "C", "A", "G"] }, ", and ", { answer: "C", options: ["C", "A", "T", "G"] }, " pairs with ", { answer: "G", options: ["G", "T", "A", "C"] }, "."] }
+    ],
+    modelAnswer: ["A typical human cell has 23 pairs of chromosomes.", "Chromosomes are found in the nucleus.", "The sex chromosomes in a female are XX.", "Sex chromosomes determine the sex of the offspring.", "In DNA, A pairs with T and C pairs with G."],
+    mistakes: [
+      { mistake: "Writing 46 pairs instead of 23 pairs.", correction: "A typical human body cell has 46 chromosomes, i.e. 23 pairs." },
+      { mistake: "Mixing up DNA base pairs.", correction: "A pairs with T, C pairs with G." }
+    ]
+  },
+  {
+    id: "D2",
+    topic: "Food Chain",
+    type: "Cause and effect explanation",
+    keySkill: "Explain using feed on and not enough food.",
+    originalQuestion: "The feeding relationship is Lobster → Octopus → Shark. State the habitat. Classify lobster and octopus as invertebrates. If the number of lobsters decreases sharply, how does it affect the number of octopuses? Explain your answer.",
+    difficultWords: [
+      { term: "feeding relationship", zh: "攝食關係", note: "誰吃誰的關係。" },
+      { term: "habitat", zh: "棲息地", note: "生物生活的地方。" },
+      { term: "invertebrates", zh: "無脊椎動物", note: "沒有脊骨的動物。" },
+      { term: "decreases sharply", zh: "急劇下降", note: "數量大幅減少。" },
+      { term: "affect", zh: "影響", note: "令某事改變。" }
+    ],
+    chunks: [
+      { eng: "How does it affect", zh: "它會怎樣影響" },
+      { eng: "the number of octopuses?", zh: "章魚的數量？" },
+      { eng: "Explain your answer.", zh: "解釋你的答案。" },
+      { eng: "Octopuses feed on lobsters.", zh: "章魚以龍蝦為食。" }
+    ],
+    meaningZh: "這題問：龍蝦數量急跌，會令章魚數量點樣改變？你要用食物鏈解釋原因。",
+    marks: [
+      { mark: "1", write: "寫出 habitat 是 sea / ocean / marine habitat", words: "sea, ocean" },
+      { mark: "1", write: "寫出 lobster and octopus are invertebrates", words: "invertebrates" },
+      { mark: "1", write: "寫出 octopuses decrease", words: "decrease" },
+      { mark: "1", write: "解釋 octopuses feed on lobsters / not enough food", words: "feed on, not enough food" }
+    ],
+    wordBank: ["sea", "invertebrates", "octopuses", "decreases", "feed on", "lobsters", "not enough food"],
+    frames: [
+      { label: "Habitat", parts: ["The habitat is the ", { answer: "sea", options: ["sea", "desert", "forest", "pond"] }, "."] },
+      { label: "Classification", parts: ["Lobster and octopus are ", { answer: "invertebrates", options: ["invertebrates", "mammals", "birds", "plants"] }, "."] },
+      { label: "Change", parts: ["The number of ", { answer: "octopuses", options: ["octopuses", "sharks", "lobsters", "plants"] }, " ", { answer: "decreases", options: ["decreases", "increases", "stays the same", "is zero"] }, "."] },
+      { label: "Reason", parts: ["It is because octopuses ", { answer: "feed on", options: ["feed on", "produce", "live in", "change into"] }, " ", { answer: "lobsters", options: ["lobsters", "sharks", "seaweed", "water"] }, ", so there is ", { answer: "not enough food", options: ["not enough food", "more sunlight", "more space", "more oxygen"] }, "."] }
+    ],
+    modelAnswer: ["The habitat is the sea.", "Lobster and octopus are invertebrates.", "The number of octopuses decreases.", "It is because octopuses feed on lobsters, so there is not enough food."],
+    mistakes: [
+      { mistake: "Only writing decreases without explanation.", correction: "Add because octopuses feed on lobsters." },
+      { mistake: "Writing sharks decrease instead of octopuses decrease.", correction: "The question asks the number of octopuses." }
+    ]
+  },
+  {
+    id: "D3",
+    topic: "Vacuum Flask",
+    type: "Heat transfer explanation",
+    keySkill: "Link flask structures with conduction and convection.",
+    originalQuestion: "The diagram shows the structure of a vacuum flask. Write down how the stopper and vacuum prevent heat transfer by conduction or convection.",
+    difficultWords: [
+      { term: "vacuum flask", zh: "真空瓶 / 保溫瓶", note: "用來減慢熱傳遞。" },
+      { term: "stopper", zh: "瓶塞", note: "塞住瓶口，減少空氣流動。" },
+      { term: "vacuum", zh: "真空層", note: "沒有粒子的空間。" },
+      { term: "conduction", zh: "傳導", note: "粒子接觸傳熱。" },
+      { term: "convection", zh: "對流", note: "流體流動傳熱。" }
+    ],
+    chunks: [
+      { eng: "Write down the ways", zh: "寫出方法" },
+      { eng: "to prevent heat transfer", zh: "去防止熱傳遞" },
+      { eng: "from the following structure", zh: "由以下結構做到" },
+      { eng: "by conduction or convection", zh: "透過傳導或對流" }
+    ],
+    meaningZh: "這題不是叫你背整個保溫瓶，而是要把結構和熱傳遞方式連起來：stopper 防止空氣流動；vacuum 沒有粒子。",
+    marks: [
+      { mark: "1", write: "stopper reduces heat transfer by convection / prevents air movement", words: "stopper, convection" },
+      { mark: "1", write: "vacuum prevents conduction and convection because there are no particles", words: "vacuum, no particles" }
+    ],
+    wordBank: ["stopper", "vacuum", "convection", "conduction", "air movement", "no particles"],
+    frames: [
+      { label: "Stopper", parts: ["The ", { answer: "stopper", options: ["stopper", "vacuum", "silvered surface", "glass wall"] }, " reduces heat transfer by ", { answer: "convection", options: ["convection", "radiation", "photosynthesis", "evaporation"] }, " because it prevents ", { answer: "air movement", options: ["air movement", "light", "DNA", "food"] }, "."] },
+      { label: "Vacuum", parts: ["The ", { answer: "vacuum", options: ["vacuum", "stopper", "cap", "water"] }, " prevents heat transfer by ", { answer: "conduction", options: ["conduction", "digestion", "classification", "reproduction"] }, " and convection because there are ", { answer: "no particles", options: ["no particles", "many animals", "many chromosomes", "more lobsters"] }, "."] }
+    ],
+    modelAnswer: ["The stopper reduces heat transfer by convection because it prevents air movement.", "The vacuum prevents heat transfer by conduction and convection because there are no particles."],
+    mistakes: [
+      { mistake: "Saying vacuum prevents radiation.", correction: "Vacuum mainly prevents conduction and convection because there are no particles." },
+      { mistake: "Only naming stopper without heat transfer method.", correction: "Write stopper + prevents convection / air movement." }
+    ]
+  },
+  {
+    id: "D4",
+    topic: "Energy Conversion",
+    type: "Energy change and comparison",
+    keySkill: "Use converted into and compare kinetic energy.",
+    originalQuestion: "Peter jumps into a pool from a 10-meter diving board. State the energy conversion. Compare jumping from a 3 m board and a 10 m board. Explain using kinetic energy, mass and speed.",
+    difficultWords: [
+      { term: "diving board", zh: "跳水板", note: "跳入泳池前站立的平台。" },
+      { term: "potential energy", zh: "位能", note: "因高度而有的能量。" },
+      { term: "kinetic energy", zh: "動能", note: "因移動而有的能量。" },
+      { term: "converted into", zh: "轉化成", note: "一種能量變成另一種能量。" },
+      { term: "mass and speed", zh: "質量和速度", note: "影響動能的因素。" }
+    ],
+    chunks: [
+      { eng: "Peter jumps into a pool", zh: "Peter 跳入泳池" },
+      { eng: "from a 10-meter diving board", zh: "由 10 米跳水板" },
+      { eng: "potential energy is converted into kinetic energy", zh: "位能轉化成動能" },
+      { eng: "kinetic energy depends on mass and speed", zh: "動能取決於質量和速度" }
+    ],
+    meaningZh: "這題問能量轉換，並比較 3 m 和 10 m 跳水時動能大小。高度越高，落水前速度越大，動能越大。",
+    marks: [
+      { mark: "1", write: "寫出 potential energy converted into kinetic energy", words: "potential, kinetic" },
+      { mark: "1", write: "10 m gives greater kinetic energy than 3 m", words: "greater kinetic energy" },
+      { mark: "1", write: "解釋 same mass but greater speed", words: "same mass, greater speed" }
+    ],
+    wordBank: ["potential", "kinetic", "10 m", "3 m", "greater", "same mass", "higher speed"],
+    frames: [
+      { label: "Energy conversion", parts: [{ answer: "potential", options: ["potential", "chemical", "sound", "light"] }, " energy is converted into ", { answer: "kinetic", options: ["kinetic", "heat", "electrical", "nuclear"] }, " energy."] },
+      { label: "Compare", parts: ["Jumping from ", { answer: "10 m", options: ["10 m", "3 m", "1 m", "0 m"] }, " gives ", { answer: "greater", options: ["greater", "smaller", "no", "less"] }, " kinetic energy than jumping from ", { answer: "3 m", options: ["3 m", "10 m", "20 m", "sea level"] }, "."] },
+      { label: "Reason", parts: ["It is because Peter has the ", { answer: "same mass", options: ["same mass", "smaller mass", "no mass", "same chromosome"] }, " but a ", { answer: "higher speed", options: ["higher speed", "lower speed", "smaller habitat", "lower humidity"] }, "."] }
+    ],
+    modelAnswer: ["Potential energy is converted into kinetic energy.", "Jumping from 10 m gives greater kinetic energy than jumping from 3 m.", "It is because Peter has the same mass but a higher speed."],
+    mistakes: [
+      { mistake: "Only writing kinetic energy.", correction: "Write the full conversion: potential energy is converted into kinetic energy." },
+      { mistake: "Explaining with mass only.", correction: "Peter's mass is the same; speed is higher from 10 m." }
+    ]
+  },
+  {
+    id: "D5",
+    topic: "Evaporation Fair Test",
+    type: "Fair test variables",
+    keySkill: "Separate independent, controlled and dependent variables.",
+    originalQuestion: "To investigate how humidity affects the rate of evaporation, Olivia does a fair test. Identify the independent variable, controlled variables and dependent variable. Which filter paper dries more quickly? Explain using humidity and rate of evaporation.",
+    difficultWords: [
+      { term: "humidity", zh: "濕度", note: "空氣中水蒸氣多少。" },
+      { term: "rate of evaporation", zh: "蒸發速率", note: "水蒸發得快或慢。" },
+      { term: "independent variable", zh: "自變量", note: "實驗中刻意改變的因素。" },
+      { term: "controlled variables", zh: "控制變量", note: "要保持相同的因素。" },
+      { term: "dependent variable", zh: "因變量", note: "實驗中量度的結果。" }
+    ],
+    chunks: [
+      { eng: "To investigate how humidity affects", zh: "為了探究濕度怎樣影響" },
+      { eng: "the rate of evaporation", zh: "蒸發速率" },
+      { eng: "independent variable", zh: "我們改變的因素" },
+      { eng: "dependent variable", zh: "我們量度的結果" }
+    ],
+    meaningZh: "這題考 fair test：改變的是 humidity，量度的是 drying time / rate of evaporation，其他如 filter paper size、water amount、temperature 要相同。",
+    marks: [
+      { mark: "1", write: "independent variable is humidity", words: "humidity" },
+      { mark: "2", write: "controlled variables such as size of filter paper, amount of water, temperature", words: "same size, same amount" },
+      { mark: "1", write: "dependent variable is rate of evaporation / drying time", words: "rate, time" },
+      { mark: "2", write: "低濕度的 filter paper dries more quickly，因 evaporation rate higher", words: "lower humidity, higher rate" }
+    ],
+    wordBank: ["humidity", "size of filter paper", "amount of water", "rate of evaporation", "lower", "higher", "dries more quickly"],
+    frames: [
+      { label: "Independent variable", parts: ["The independent variable is ", { answer: "humidity", options: ["humidity", "mass", "chromosomes", "sex"] }, "."] },
+      { label: "Controlled variables", parts: ["The controlled variables are ", { answer: "size of filter paper", options: ["size of filter paper", "number of octopuses", "type of chromosome", "height of board"] }, " and ", { answer: "amount of water", options: ["amount of water", "sex chromosomes", "shark size", "DNA bases"] }, "."] },
+      { label: "Dependent variable", parts: ["The dependent variable is the ", { answer: "rate of evaporation", options: ["rate of evaporation", "habitat", "offspring", "vacuum"] }, "."] },
+      { label: "Conclusion", parts: ["When humidity is ", { answer: "lower", options: ["lower", "higher", "unchanged", "not measured"] }, ", the rate of evaporation is ", { answer: "higher", options: ["higher", "lower", "zero", "the same"] }, " and the filter paper ", { answer: "dries more quickly", options: ["dries more quickly", "produces sperms", "feeds on lobsters", "implants"] }, "."] }
+    ],
+    modelAnswer: ["The independent variable is humidity.", "The controlled variables are size of filter paper and amount of water.", "The dependent variable is the rate of evaporation.", "When humidity is lower, the rate of evaporation is higher and the filter paper dries more quickly."],
+    mistakes: [
+      { mistake: "Confusing independent variable and dependent variable.", correction: "Independent variable = what we change. Dependent variable = what we measure." },
+      { mistake: "Writing humidity is controlled.", correction: "Humidity is changed, so it is the independent variable." }
+    ]
+  },
+  {
+    id: "D6",
+    topic: "Reproductive System",
+    type: "Diagram labels and functions",
+    keySkill: "Distinguish fertilization and implantation.",
+    originalQuestion: "Use letters from the male and female reproductive system diagrams to identify the structures for producing sperms, producing fluid that contains nutrients for sperms, fertilization, and implantation of an embryo.",
+    difficultWords: [
+      { term: "sperms", zh: "精子", note: "男性配子。" },
+      { term: "nutrients", zh: "營養物質", note: "提供能量和養分。" },
+      { term: "fertilization", zh: "受精", note: "精子和卵子結合。" },
+      { term: "implantation", zh: "著床", note: "胚胎附在子宮內壁。" },
+      { term: "embryo", zh: "胚胎", note: "受精後早期發育的個體。" }
+    ],
+    chunks: [
+      { eng: "producing sperms", zh: "製造精子" },
+      { eng: "producing fluid that contains nutrients", zh: "製造含營養的液體" },
+      { eng: "fertilization", zh: "受精" },
+      { eng: "implantation of an embryo", zh: "胚胎著床" }
+    ],
+    meaningZh: "這題要看圖用字母回答結構。學習重點是功能：testis 製造精子；seminal vesicle / prostate gland 提供營養液；fertilization 在 oviduct；implantation 在 uterus。",
+    marks: [
+      { mark: "1", write: "producing sperms: testis", words: "testis" },
+      { mark: "1", write: "producing nutrient fluid: seminal vesicle / prostate gland", words: "fluid, nutrients" },
+      { mark: "1", write: "fertilization occurs in oviduct", words: "oviduct" },
+      { mark: "1", write: "implantation occurs in uterus", words: "uterus" }
+    ],
+    wordBank: ["testis", "seminal vesicle", "oviduct", "uterus", "fertilization", "implantation"],
+    frames: [
+      { label: "Sperms", parts: ["Sperms are produced in the ", { answer: "testis", options: ["testis", "uterus", "oviduct", "ovary"] }, "."] },
+      { label: "Nutrient fluid", parts: ["Fluid that contains nutrients for sperms is produced by the ", { answer: "seminal vesicle", options: ["seminal vesicle", "oviduct", "uterus", "vagina"] }, "."] },
+      { label: "Fertilization", parts: [{ answer: "fertilization", options: ["fertilization", "implantation", "evaporation", "classification"] }, " occurs in the ", { answer: "oviduct", options: ["oviduct", "uterus", "testis", "penis"] }, "."] },
+      { label: "Implantation", parts: [{ answer: "implantation", options: ["implantation", "fertilization", "convection", "base pairing"] }, " of an embryo occurs in the ", { answer: "uterus", options: ["uterus", "oviduct", "testis", "seminal vesicle"] }, "."] }
+    ],
+    modelAnswer: ["Sperms are produced in the testis.", "Fluid that contains nutrients for sperms is produced by the seminal vesicle.", "Fertilization occurs in the oviduct.", "Implantation of an embryo occurs in the uterus."],
+    mistakes: [
+      { mistake: "Mixing up fertilization and implantation.", correction: "Fertilization occurs in the oviduct. Implantation occurs in the uterus." },
+      { mistake: "Writing ovary produces sperms.", correction: "Testis produces sperms. Ovary produces ova." }
+    ]
+  }
+];
+
 let currentQuestionIndex = 0;
 let selectedAnswer = null;
 let hasChecked = false;
@@ -749,14 +1000,18 @@ let userAnswers = {};
 let wrongQuestionPool = [];
 let inWrongOnlyMode = false;
 let wrongModeIndex = 0;
+let currentShortIndex = 0;
+let currentShortStep = 0;
 
 const screens = {
   home: document.getElementById("home-screen"),
   practice: document.getElementById("practice-screen"),
+  short: document.getElementById("short-screen"),
   review: document.getElementById("review-screen")
 };
 
 const startBtn = document.getElementById("start-btn");
+const shortStartBtn = document.getElementById("short-start-btn");
 const currentQNum = document.getElementById("current-q-num");
 const totalQNum = document.getElementById("total-q-num");
 const progressBar = document.getElementById("progress-bar");
@@ -790,6 +1045,26 @@ const masterVocabGrid = document.getElementById("master-vocab-grid");
 const vocabCounter = document.getElementById("vocab-counter");
 const retryAllBtn = document.getElementById("retry-all-btn");
 const retryWrongBtn = document.getElementById("retry-wrong-btn");
+const shortHomeBackBtn = document.getElementById("short-home-back-btn");
+const shortModeHomeBtn = document.getElementById("short-mode-home-btn");
+const shortModeBankBtn = document.getElementById("short-mode-bank-btn");
+const shortModePracticeBtn = document.getElementById("short-mode-practice-btn");
+const shortHomeView = document.getElementById("short-home-view");
+const shortGuidedView = document.getElementById("short-guided-view");
+const shortFrameBankView = document.getElementById("short-frame-bank-view");
+const shortPracticeView = document.getElementById("short-practice-view");
+const shortQuestionCards = document.getElementById("short-question-cards");
+const shortGuidedKicker = document.getElementById("short-guided-kicker");
+const shortGuidedTitle = document.getElementById("short-guided-title");
+const shortGuidedSkill = document.getElementById("short-guided-skill");
+const shortPrevQBtn = document.getElementById("short-prev-q-btn");
+const shortNextQBtn = document.getElementById("short-next-q-btn");
+const shortStepProgress = document.getElementById("short-step-progress");
+const shortStepTabs = document.getElementById("short-step-tabs");
+const shortStepContent = document.getElementById("short-step-content");
+const shortFrameBankList = document.getElementById("short-frame-bank-list");
+const shortPracticeSelect = document.getElementById("short-practice-select");
+const shortPracticeContent = document.getElementById("short-practice-content");
 
 function refreshIcons() {
   if (window.lucide) {
@@ -802,6 +1077,344 @@ function showScreen(screenKey) {
     screens[key].classList.toggle("hidden", key !== screenKey);
   });
   window.scrollTo(0, 0);
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function setShortMode(mode) {
+  const isHome = mode === "home";
+  const isBank = mode === "bank";
+  const isPractice = mode === "practice";
+  shortHomeView.classList.toggle("hidden", !isHome);
+  shortGuidedView.classList.add("hidden");
+  shortFrameBankView.classList.toggle("hidden", !isBank);
+  shortPracticeView.classList.toggle("hidden", !isPractice);
+  [[shortModeHomeBtn, isHome], [shortModeBankBtn, isBank], [shortModePracticeBtn, isPractice]].forEach(([button, active]) => {
+    button.classList.toggle("active", active);
+  });
+  if (isHome) renderShortCards();
+  if (isBank) renderFrameBank();
+  if (isPractice) renderPracticeMode();
+  refreshIcons();
+}
+
+function openShortQuestion(index, step = 0) {
+  currentShortIndex = Math.max(0, Math.min(index, shortQuestionDatabase.length - 1));
+  currentShortStep = Math.max(0, Math.min(step, shortSteps.length - 1));
+  shortHomeView.classList.add("hidden");
+  shortFrameBankView.classList.add("hidden");
+  shortPracticeView.classList.add("hidden");
+  shortGuidedView.classList.remove("hidden");
+  [shortModeHomeBtn, shortModeBankBtn, shortModePracticeBtn].forEach((button) => button.classList.remove("active"));
+  renderShortGuidedQuestion();
+  shortGuidedView.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function renderShortCards() {
+  shortQuestionCards.innerHTML = "";
+  shortQuestionDatabase.forEach((q, index) => {
+    const card = document.createElement("article");
+    card.className = "short-question-card bg-white rounded-3xl border border-slate-100 shadow-sm p-5 space-y-4";
+    card.innerHTML = `
+      <div class="flex items-start justify-between gap-3">
+        <span class="bg-indigo-50 text-indigo-700 font-black px-3 py-1 rounded-full text-sm">${q.id}</span>
+        <span class="bg-slate-100 text-slate-600 font-bold px-3 py-1 rounded-full text-xs">${q.type}</span>
+      </div>
+      <div>
+        <h3 class="font-header text-2xl font-black text-slate-900">${q.topic}</h3>
+        <p class="text-slate-500 font-semibold mt-2">${q.keySkill}</p>
+      </div>
+      <button class="short-card-start w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-2xl px-4 py-3 flex items-center justify-center gap-2 transition-all" type="button">
+        Start guided answer <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+    `;
+    card.querySelector(".short-card-start").addEventListener("click", () => openShortQuestion(index));
+    shortQuestionCards.appendChild(card);
+  });
+  refreshIcons();
+}
+
+function renderShortGuidedQuestion() {
+  const q = shortQuestionDatabase[currentShortIndex];
+  shortGuidedKicker.innerText = `${q.id} / ${shortQuestionDatabase.length} questions`;
+  shortGuidedTitle.innerText = q.topic;
+  shortGuidedSkill.innerText = q.keySkill;
+  shortPrevQBtn.disabled = currentShortIndex === 0;
+  shortNextQBtn.disabled = currentShortIndex === shortQuestionDatabase.length - 1;
+  shortStepProgress.style.width = `${((currentShortStep + 1) / shortSteps.length) * 100}%`;
+  shortStepTabs.innerHTML = "";
+  shortSteps.forEach((step, index) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = `short-step-tab ${index === currentShortStep ? "active" : ""}`;
+    button.innerHTML = `<i data-lucide="${step.icon}" class="w-4 h-4"></i><span>${index + 1}. ${step.title}</span><small>${step.zh}</small>`;
+    button.addEventListener("click", () => {
+      currentShortStep = index;
+      renderShortGuidedQuestion();
+    });
+    shortStepTabs.appendChild(button);
+  });
+  const renderers = [renderReadStep, renderUnderstandStep, renderMarksStep, renderBuildStep, renderMistakesStep, renderModelStep];
+  shortStepContent.innerHTML = renderers[currentShortStep](q, "guided");
+  attachShortBuilderHandlers(shortStepContent);
+  refreshIcons();
+}
+
+function renderReadStep(q) {
+  return `
+    <div class="grid grid-cols-1 xl:grid-cols-5 gap-5">
+      <section class="short-panel xl:col-span-3">
+        <div class="short-section-title"><i data-lucide="book-open" class="w-5 h-5"></i> Step 1: Read the Question</div>
+        <p class="short-original">${escapeHtml(q.originalQuestion)}</p>
+        <div class="mt-4 p-4 bg-amber-50 border border-amber-100 rounded-2xl text-amber-900 font-semibold">
+          先不要急住睇完整中文翻譯。先圈出生字，再逐段拆句。
+        </div>
+      </section>
+      <section class="short-panel xl:col-span-2">
+        <div class="short-section-title"><i data-lucide="sparkles" class="w-5 h-5"></i> Difficult Words</div>
+        <div class="space-y-3">
+          ${q.difficultWords.map((word) => `
+            <div class="short-word-card">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="short-word">${escapeHtml(word.term)}</span>
+                <span class="short-word-zh">${escapeHtml(word.zh)}</span>
+              </div>
+              <p>${escapeHtml(word.note)}</p>
+            </div>
+          `).join("")}
+        </div>
+      </section>
+    </div>
+  `;
+}
+
+function renderUnderstandStep(q) {
+  return `
+    <div class="grid grid-cols-1 xl:grid-cols-2 gap-5">
+      <section class="short-panel">
+        <div class="short-section-title"><i data-lucide="align-left" class="w-5 h-5"></i> Sentence Breakdown</div>
+        <div class="space-y-3">
+          ${q.chunks.map((chunk) => `
+            <div class="short-chunk">
+              <span>${escapeHtml(chunk.eng)}</span>
+              <strong>${escapeHtml(chunk.zh)}</strong>
+            </div>
+          `).join("")}
+        </div>
+      </section>
+      <section class="short-panel">
+        <div class="short-section-title"><i data-lucide="messages-square" class="w-5 h-5"></i> What is the question asking?</div>
+        <p class="short-meaning">${escapeHtml(q.meaningZh)}</p>
+      </section>
+    </div>
+  `;
+}
+
+function renderMarksStep(q) {
+  return `
+    <section class="short-panel">
+      <div class="short-section-title"><i data-lucide="table-2" class="w-5 h-5"></i> Step 3: Know the Marks</div>
+      <div class="overflow-x-auto">
+        <table class="short-mark-table">
+          <thead><tr><th>Mark</th><th>What you need to write</th><th>Helpful words</th></tr></thead>
+          <tbody>
+            ${q.marks.map((row) => `
+              <tr>
+                <td><span class="short-mark-badge">${escapeHtml(row.mark)}</span></td>
+                <td>${escapeHtml(row.write)}</td>
+                <td><span class="short-helpful">${escapeHtml(row.words)}</span></td>
+              </tr>
+            `).join("")}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  `;
+}
+
+function frameToText(frame) {
+  return frame.parts.map((part) => (typeof part === "string" ? part : part.answer)).join("");
+}
+
+function renderFrameBuilder(q, context) {
+  const bank = q.wordBank.map((word) => `<button type="button" class="short-bank-word" data-word="${escapeHtml(word)}">${escapeHtml(word)}</button>`).join("");
+  const frames = q.frames.map((frame, frameIndex) => {
+    const parts = frame.parts.map((part) => {
+      if (typeof part === "string") return `<span>${escapeHtml(part)}</span>`;
+      return `
+        <select class="short-blank" data-answer="${escapeHtml(part.answer)}" aria-label="Fill blank">
+          <option value="">______</option>
+          ${part.options.map((option) => `<option value="${escapeHtml(option)}">${escapeHtml(option)}</option>`).join("")}
+        </select>
+      `;
+    }).join("");
+    return `
+      <div class="short-frame-card">
+        <h4>${escapeHtml(frame.label)}</h4>
+        <div class="short-frame-line">${parts}</div>
+        <p class="short-built-answer" data-frame-answer="${escapeHtml(frameToText(frame))}"></p>
+      </div>
+    `;
+  }).join("");
+  return `
+    <div class="space-y-4 short-builder" data-context="${context}">
+      <div class="short-word-bank">
+        <p class="font-bold text-slate-700">Word Bank 詞彙庫：按字可以填入第一個合適空格</p>
+        <div class="flex flex-wrap gap-2 mt-2">${bank}</div>
+      </div>
+      ${frames}
+      <div class="flex flex-wrap gap-3">
+        <button type="button" class="short-reveal-model bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-5 py-3 rounded-xl flex items-center gap-2">
+          <i data-lucide="eye" class="w-4 h-4"></i> Show model answer
+        </button>
+        <button type="button" class="short-clear-builder bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-5 py-3 rounded-xl flex items-center gap-2">
+          <i data-lucide="eraser" class="w-4 h-4"></i> Clear
+        </button>
+      </div>
+      <div class="short-model-box hidden">
+        <h4>Model Answer 參考答案</h4>
+        ${q.modelAnswer.map((line) => `<p>${highlightShortKeywords(line)}</p>`).join("")}
+      </div>
+    </div>
+  `;
+}
+
+function renderBuildStep(q) {
+  return `
+    <section class="short-panel">
+      <div class="short-section-title"><i data-lucide="blocks" class="w-5 h-5"></i> Step 4: Build Your Answer</div>
+      <p class="text-slate-500 font-semibold mb-4">先用 sentence frames 砌短句。這裡不判分，只幫你建立完整英文答案。</p>
+      ${renderFrameBuilder(q, "guided")}
+    </section>
+  `;
+}
+
+function renderMistakesStep(q) {
+  return `
+    <section class="short-panel">
+      <div class="short-section-title"><i data-lucide="alert-triangle" class="w-5 h-5"></i> Step 5: Common Mistakes 常見錯誤</div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        ${q.mistakes.map((item) => `
+          <div class="short-mistake-card">
+            <p class="mistake"><strong>Mistake:</strong> ${escapeHtml(item.mistake)}</p>
+            <p class="correction"><strong>Correction:</strong> ${escapeHtml(item.correction)}</p>
+          </div>
+        `).join("")}
+      </div>
+    </section>
+  `;
+}
+
+function highlightShortKeywords(line) {
+  const terms = ["23 pairs", "nucleus", "XX", "A pairs with T", "C pairs with G", "decreases", "feed on", "not enough food", "stopper", "vacuum", "conduction", "convection", "potential", "kinetic", "independent variable", "controlled variables", "dependent variable", "fertilization", "implantation", "oviduct", "uterus"];
+  let output = escapeHtml(line);
+  terms.forEach((term) => {
+    output = output.replaceAll(escapeHtml(term), `<mark>${escapeHtml(term)}</mark>`);
+  });
+  return output;
+}
+
+function renderModelStep(q) {
+  return `
+    <section class="short-panel">
+      <div class="short-section-title"><i data-lucide="badge-check" class="w-5 h-5"></i> Step 6: Model Answer</div>
+      <div class="short-model-answer-list">
+        ${q.modelAnswer.map((line, index) => `
+          <div class="short-model-answer">
+            <span>${index + 1}</span>
+            <p>${highlightShortKeywords(line)}</p>
+          </div>
+        `).join("")}
+      </div>
+    </section>
+  `;
+}
+
+function attachShortBuilderHandlers(root) {
+  root.querySelectorAll(".short-blank").forEach((select) => {
+    select.addEventListener("change", () => {
+      const frameCard = select.closest(".short-frame-card");
+      const answerLine = frameCard.querySelector(".short-built-answer");
+      const values = [...frameCard.querySelectorAll(".short-blank")].map((item) => item.value || "______");
+      let cursor = 0;
+      const frameText = [...frameCard.querySelectorAll(".short-frame-line > span, .short-frame-line > select")]
+        .map((node) => node.tagName === "SELECT" ? values[cursor++] : node.innerText)
+        .join("");
+      answerLine.innerText = frameText.includes("______") ? "" : frameText;
+    });
+  });
+  root.querySelectorAll(".short-bank-word").forEach((button) => {
+    button.addEventListener("click", () => {
+      const builder = button.closest(".short-builder");
+      const blanks = [...builder.querySelectorAll(".short-blank")];
+      const matchingBlank = blanks.find((select) => !select.value && [...select.options].some((option) => option.value === button.dataset.word));
+      if (!matchingBlank) return;
+      matchingBlank.value = button.dataset.word;
+      matchingBlank.dispatchEvent(new Event("change"));
+    });
+  });
+  root.querySelectorAll(".short-reveal-model").forEach((button) => {
+    button.addEventListener("click", () => {
+      button.closest(".short-builder").querySelector(".short-model-box").classList.remove("hidden");
+    });
+  });
+  root.querySelectorAll(".short-clear-builder").forEach((button) => {
+    button.addEventListener("click", () => {
+      const builder = button.closest(".short-builder");
+      builder.querySelectorAll(".short-blank").forEach((select) => { select.value = ""; });
+      builder.querySelectorAll(".short-built-answer").forEach((line) => { line.innerText = ""; });
+      builder.querySelector(".short-model-box").classList.add("hidden");
+    });
+  });
+}
+
+function renderFrameBank() {
+  shortFrameBankList.innerHTML = frameBank.map((group) => `
+    <section class="short-panel">
+      <div class="short-section-title"><i data-lucide="quote" class="w-5 h-5"></i> ${escapeHtml(group.type)}</div>
+      <div class="space-y-2">
+        ${group.frames.map((frame) => `<div class="short-bank-frame">${escapeHtml(frame)}</div>`).join("")}
+      </div>
+    </section>
+  `).join("");
+}
+
+function renderPracticeMode() {
+  shortPracticeSelect.innerHTML = shortQuestionDatabase.map((q, index) => `<option value="${index}">${q.id} ${q.topic}</option>`).join("");
+  shortPracticeSelect.value = String(currentShortIndex);
+  renderPracticeQuestion();
+}
+
+function renderPracticeQuestion() {
+  const q = shortQuestionDatabase[Number(shortPracticeSelect.value || 0)];
+  currentShortIndex = Number(shortPracticeSelect.value || 0);
+  shortPracticeContent.innerHTML = `
+    <div class="grid grid-cols-1 xl:grid-cols-5 gap-5">
+      <section class="short-panel xl:col-span-2">
+        <div class="short-section-title"><i data-lucide="book-open" class="w-5 h-5"></i> Practice Question</div>
+        <p class="short-original">${escapeHtml(q.originalQuestion)}</p>
+        <div class="mt-4">
+          <h4 class="font-bold text-slate-800 mb-2">Difficult words only</h4>
+          <div class="space-y-2">
+            ${q.difficultWords.map((word) => `<div class="short-mini-word"><strong>${escapeHtml(word.term)}</strong><span>${escapeHtml(word.zh)}</span></div>`).join("")}
+          </div>
+        </div>
+      </section>
+      <section class="short-panel xl:col-span-3">
+        <div class="short-section-title"><i data-lucide="blocks" class="w-5 h-5"></i> Complete the sentence frames</div>
+        ${renderFrameBuilder(q, "practice")}
+      </section>
+    </div>
+  `;
+  attachShortBuilderHandlers(shortPracticeContent);
+  refreshIcons();
 }
 
 function getActiveQuestion() {
@@ -1287,6 +1900,29 @@ startBtn.addEventListener("click", () => {
   renderQuestion();
   updateLiveStats();
 });
+
+shortStartBtn.addEventListener("click", () => {
+  showScreen("short");
+  setShortMode("home");
+});
+
+shortHomeBackBtn.addEventListener("click", () => {
+  showScreen("home");
+});
+
+shortModeHomeBtn.addEventListener("click", () => setShortMode("home"));
+shortModeBankBtn.addEventListener("click", () => setShortMode("bank"));
+shortModePracticeBtn.addEventListener("click", () => setShortMode("practice"));
+
+shortPrevQBtn.addEventListener("click", () => {
+  if (currentShortIndex > 0) openShortQuestion(currentShortIndex - 1, currentShortStep);
+});
+
+shortNextQBtn.addEventListener("click", () => {
+  if (currentShortIndex < shortQuestionDatabase.length - 1) openShortQuestion(currentShortIndex + 1, currentShortStep);
+});
+
+shortPracticeSelect.addEventListener("change", renderPracticeQuestion);
 
 document.addEventListener("DOMContentLoaded", refreshIcons);
 refreshIcons();

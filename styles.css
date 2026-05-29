@@ -137,6 +137,352 @@ main {
   width: 100%;
 }
 
+#short-screen {
+  max-width: 92rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.short-mode-btn,
+.short-small-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.9rem;
+  font-weight: 800;
+  transition: all 0.2s ease;
+}
+
+.short-mode-btn {
+  padding: 0.85rem 1rem;
+  color: rgb(71 85 105);
+  background: rgb(248 250 252);
+}
+
+.short-mode-btn:hover,
+.short-mode-btn.active {
+  color: rgb(49 46 129);
+  background: rgb(224 231 255);
+}
+
+.short-small-btn {
+  padding: 0.7rem 0.9rem;
+  color: rgb(51 65 85);
+  background: rgb(241 245 249);
+}
+
+.short-small-btn:hover {
+  background: rgb(226 232 240);
+}
+
+.short-small-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.short-question-card {
+  min-height: 15.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.short-question-card .short-card-start {
+  margin-top: auto;
+}
+
+.short-step-tab {
+  min-height: 4.2rem;
+  padding: 0.75rem;
+  border-radius: 1rem;
+  border: 1px solid rgb(226 232 240);
+  background: rgb(248 250 252);
+  color: rgb(71 85 105);
+  font-weight: 900;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0.25rem 0.5rem;
+  text-align: left;
+}
+
+.short-step-tab small {
+  grid-column: 2;
+  color: rgb(100 116 139);
+  font-weight: 700;
+}
+
+.short-step-tab.active {
+  border-color: rgb(99 102 241);
+  background: rgb(238 242 255);
+  color: rgb(67 56 202);
+  box-shadow: 0 8px 22px rgb(79 70 229 / 0.12);
+}
+
+.short-panel {
+  background: white;
+  border: 1px solid rgb(226 232 240);
+  border-radius: 1.5rem;
+  padding: 1.25rem;
+  box-shadow: 0 1px 2px rgb(15 23 42 / 0.04);
+}
+
+.short-section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: rgb(30 41 59);
+  font-family: "Fredoka", sans-serif;
+  font-weight: 900;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.short-original,
+.short-meaning {
+  font-size: clamp(1.08rem, 1.5vw, 1.28rem);
+  line-height: 1.75;
+  color: rgb(51 65 85);
+  font-weight: 700;
+}
+
+.short-word-card,
+.short-chunk,
+.short-frame-card,
+.short-word-bank,
+.short-mistake-card,
+.short-model-box,
+.short-bank-frame,
+.short-mini-word,
+.short-model-answer {
+  border-radius: 1rem;
+  border: 1px solid rgb(226 232 240);
+  background: rgb(248 250 252);
+}
+
+.short-word-card,
+.short-frame-card,
+.short-word-bank,
+.short-mistake-card,
+.short-model-box,
+.short-bank-frame,
+.short-model-answer {
+  padding: 1rem;
+}
+
+.short-word-card p,
+.short-mistake-card p {
+  margin-top: 0.35rem;
+  color: rgb(71 85 105);
+  font-weight: 650;
+  line-height: 1.55;
+}
+
+.short-word {
+  color: rgb(67 56 202);
+  font-weight: 900;
+  font-size: 1.05rem;
+}
+
+.short-word-zh {
+  background: rgb(224 231 255);
+  color: rgb(49 46 129);
+  font-weight: 900;
+  padding: 0.15rem 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.short-chunk {
+  padding: 0.85rem 1rem;
+  display: grid;
+  gap: 0.25rem;
+}
+
+.short-chunk span {
+  color: rgb(67 56 202);
+  font-weight: 900;
+}
+
+.short-chunk strong {
+  color: rgb(71 85 105);
+}
+
+.short-mark-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.6rem;
+  min-width: 720px;
+}
+
+.short-mark-table th {
+  text-align: left;
+  color: rgb(100 116 139);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0 0.8rem;
+}
+
+.short-mark-table td {
+  background: rgb(248 250 252);
+  border-top: 1px solid rgb(226 232 240);
+  border-bottom: 1px solid rgb(226 232 240);
+  padding: 0.85rem;
+  color: rgb(51 65 85);
+  font-weight: 700;
+}
+
+.short-mark-table td:first-child {
+  border-left: 1px solid rgb(226 232 240);
+  border-radius: 1rem 0 0 1rem;
+}
+
+.short-mark-table td:last-child {
+  border-right: 1px solid rgb(226 232 240);
+  border-radius: 0 1rem 1rem 0;
+}
+
+.short-mark-badge {
+  display: inline-flex;
+  width: 2.1rem;
+  height: 2.1rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgb(79 70 229);
+  color: white;
+  font-weight: 900;
+}
+
+.short-helpful {
+  color: rgb(15 118 110);
+  font-weight: 900;
+}
+
+.short-bank-word {
+  border-radius: 999px;
+  background: white;
+  border: 1px solid rgb(199 210 254);
+  color: rgb(67 56 202);
+  padding: 0.45rem 0.8rem;
+  font-weight: 900;
+  transition: all 0.2s ease;
+}
+
+.short-bank-word:hover {
+  background: rgb(238 242 255);
+  transform: translateY(-1px);
+}
+
+.short-frame-card h4,
+.short-model-box h4 {
+  color: rgb(30 41 59);
+  font-weight: 900;
+  margin-bottom: 0.6rem;
+}
+
+.short-frame-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 1.08rem;
+  line-height: 1.8;
+  color: rgb(51 65 85);
+  font-weight: 750;
+}
+
+.short-blank {
+  min-width: 8.2rem;
+  border: 2px solid rgb(199 210 254);
+  border-radius: 0.75rem;
+  background: white;
+  color: rgb(49 46 129);
+  font-weight: 900;
+  padding: 0.45rem 0.65rem;
+}
+
+.short-built-answer {
+  margin-top: 0.7rem;
+  color: rgb(15 118 110);
+  font-weight: 900;
+}
+
+.short-model-box {
+  background: rgb(236 253 245);
+  border-color: rgb(167 243 208);
+}
+
+.short-model-box p,
+.short-model-answer p {
+  color: rgb(30 41 59);
+  font-weight: 750;
+  line-height: 1.65;
+}
+
+.short-model-box mark,
+.short-model-answer mark {
+  background: rgb(254 240 138);
+  color: rgb(30 41 59);
+  border-radius: 0.35rem;
+  padding: 0 0.18rem;
+}
+
+.short-mistake-card {
+  background: rgb(255 247 237);
+  border-color: rgb(254 215 170);
+}
+
+.short-mistake-card .mistake {
+  color: rgb(154 52 18);
+}
+
+.short-mistake-card .correction {
+  color: rgb(21 128 61);
+}
+
+.short-model-answer {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 0.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.short-model-answer span {
+  display: inline-flex;
+  width: 2rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgb(14 165 233);
+  color: white;
+  font-weight: 900;
+}
+
+.short-bank-frame {
+  font-weight: 900;
+  color: rgb(51 65 85);
+}
+
+.short-mini-word {
+  padding: 0.7rem 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.short-mini-word strong {
+  color: rgb(67 56 202);
+}
+
+.short-mini-word span {
+  color: rgb(15 118 110);
+  font-weight: 900;
+}
+
 #question-navigator {
   font-size: 1rem;
 }
@@ -266,6 +612,7 @@ main {
   footer,
   #home-screen,
   #practice-screen,
+  #short-screen,
   #retry-all-btn,
   #retry-wrong-btn {
     display: none !important;
