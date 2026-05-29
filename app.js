@@ -903,11 +903,11 @@ function renderQuestionNavigator() {
       <div class="flex items-start justify-between gap-2">
         <div class="min-w-0">
           <div class="flex items-center gap-2">
-            <span class="font-header font-bold text-sm">Q${q.id}</span>
-            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full ${isActive ? "bg-teal-100 text-teal-800" : "bg-white/70 text-current"}">${status.label}</span>
+            <span class="font-header font-bold text-base">Q${q.id}</span>
+            <span class="text-xs font-bold px-2 py-0.5 rounded-full ${isActive ? "bg-teal-100 text-teal-800" : "bg-white/70 text-current"}">${status.label}</span>
           </div>
-          <div class="text-[11px] font-bold text-slate-400 mt-1 truncate">${q.topic}</div>
-          <div class="text-xs text-slate-600 leading-snug mt-1 line-clamp-2">${shortQuestion}</div>
+          <div class="text-sm font-bold text-slate-400 mt-1 truncate">${q.topic}</div>
+          <div class="text-sm text-slate-600 leading-snug mt-1 line-clamp-2">${shortQuestion}</div>
         </div>
         <i data-lucide="${isActive ? "arrow-right-circle" : status.icon}" class="w-4 h-4 flex-shrink-0 mt-0.5"></i>
       </div>
@@ -971,8 +971,8 @@ function renderQuestion() {
     const block = document.createElement("div");
     block.className = "p-2.5 bg-slate-50 rounded-xl border border-slate-200/60";
     block.innerHTML = `
-      <div class="text-xs font-bold text-indigo-700 font-mono tracking-wider">${chunk.eng}</div>
-      <div class="text-xs font-semibold text-slate-500 mt-0.5">${chunk.translation}</div>
+      <div class="text-sm font-bold text-indigo-700 font-mono tracking-wider">${chunk.eng}</div>
+      <div class="text-sm font-semibold text-slate-500 mt-0.5">${chunk.translation}</div>
     `;
     decoderContainer.appendChild(block);
   });
@@ -989,7 +989,7 @@ function renderQuestion() {
     const vocabPillsMarkup = vocabs.length > 0 ? `
       <div class="flex flex-wrap gap-1.5 mt-1 border-t border-slate-100 pt-2 w-full">
         ${vocabs.map((v) => `
-          <span class="inline-flex items-center gap-1 text-[11px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md font-semibold">
+          <span class="vocab-pill inline-flex items-center gap-1 text-sm bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md font-semibold">
             <span class="text-indigo-600">${v.term}</span>
             <span class="text-slate-400 font-normal">=</span>
             <span class="text-teal-700">${v.translation}</span>
@@ -1001,7 +1001,7 @@ function renderQuestion() {
     btn.innerHTML = `
       <div class="flex items-start gap-3 w-full">
         <span class="option-letter w-7 h-7 flex-shrink-0 rounded-lg bg-slate-100 text-slate-600 font-bold text-sm flex items-center justify-center border border-slate-200">${key}</span>
-        <span class="text-slate-700 pt-0.5 text-sm md:text-base font-bold">${optionText}</span>
+        <span class="option-text text-slate-700 pt-0.5 text-base md:text-lg font-bold">${optionText}</span>
       </div>
       ${vocabPillsMarkup}
     `;
@@ -1016,10 +1016,10 @@ function renderQuestion() {
     kwCard.className = "w-full text-left p-3 bg-slate-50 rounded-xl border border-slate-100 hover:border-emerald-200 transition-colors group cursor-pointer";
     kwCard.innerHTML = `
       <div class="flex justify-between items-center gap-2 mb-1">
-        <span class="font-bold text-teal-700 text-sm font-header group-hover:underline">${kw.word}</span>
-        <span class="text-xs bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded">${kw.zh}</span>
+        <span class="keyword-word font-bold text-teal-700 text-base font-header group-hover:underline">${kw.word}</span>
+        <span class="keyword-zh text-sm bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded">${kw.zh}</span>
       </div>
-      <p class="text-[11px] text-slate-500 leading-normal">${kw.desc}</p>
+      <p class="keyword-desc text-sm text-slate-500 leading-normal">${kw.desc}</p>
     `;
     kwCard.addEventListener("click", () => highlightWordInQuestion(kw.word));
     keywordsContainer.appendChild(kwCard);

@@ -1,5 +1,6 @@
 body {
   font-family: "Quicksand", "Fredoka", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
 }
 
 .font-header {
@@ -118,6 +119,146 @@ body {
   font-size: 0.68rem;
   font-weight: 800;
   backdrop-filter: blur(8px);
+}
+
+main {
+  max-width: none !important;
+}
+
+#home-screen,
+#review-screen {
+  max-width: 80rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#practice-screen {
+  width: 100%;
+}
+
+#question-navigator {
+  font-size: 1rem;
+}
+
+#question-jump-list {
+  scrollbar-width: thin;
+}
+
+#question-text {
+  font-size: clamp(1.45rem, 2.1vw, 2rem) !important;
+  line-height: 1.55 !important;
+}
+
+#meaning-zh,
+#hint-text {
+  font-size: 1.08rem !important;
+  line-height: 1.75 !important;
+}
+
+#decoder-container > div {
+  padding: 0.85rem !important;
+}
+
+#decoder-container .font-mono {
+  font-size: 1rem !important;
+  line-height: 1.45 !important;
+}
+
+#decoder-container .text-slate-500 {
+  font-size: 0.95rem !important;
+  line-height: 1.45 !important;
+}
+
+.option-btn {
+  padding: 1.1rem !important;
+}
+
+.option-letter {
+  width: 2.15rem !important;
+  height: 2.15rem !important;
+  font-size: 1.05rem !important;
+}
+
+.option-text {
+  font-size: clamp(1.08rem, 1.45vw, 1.28rem) !important;
+  line-height: 1.55 !important;
+}
+
+.vocab-pill {
+  font-size: 0.9rem !important;
+  line-height: 1.4 !important;
+  padding: 0.25rem 0.55rem !important;
+}
+
+.keyword-word {
+  font-size: 1.08rem !important;
+}
+
+.keyword-zh {
+  font-size: 0.9rem !important;
+}
+
+.keyword-desc {
+  font-size: 0.95rem !important;
+  line-height: 1.55 !important;
+}
+
+@media (min-width: 1280px) {
+  #practice-screen {
+    padding-left: 21.5rem;
+  }
+
+  #practice-screen > .grid {
+    display: block !important;
+  }
+
+  #question-navigator {
+    position: fixed !important;
+    top: 6.25rem !important;
+    left: 1.25rem !important;
+    width: 19.25rem !important;
+    max-height: calc(100vh - 7.5rem);
+    overflow: hidden;
+    z-index: 40;
+  }
+
+  #question-jump-list {
+    max-height: calc(100vh - 16rem) !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  #practice-screen .xl\:col-span-9 {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1536px) {
+  #practice-screen {
+    padding-left: 23.5rem;
+  }
+
+  #question-navigator {
+    width: 21rem !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: 16px;
+  }
+
+  #question-text {
+    font-size: 1.28rem !important;
+  }
+
+  .option-text {
+    font-size: 1.02rem !important;
+  }
+
+  .vocab-pill {
+    font-size: 0.82rem !important;
+  }
 }
 
 @media print {
